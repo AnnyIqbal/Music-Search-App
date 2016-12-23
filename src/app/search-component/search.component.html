@@ -1,3 +1,26 @@
-<p>
-  search-component works!
-</p>
+<md-card> 
+  <md-card-title> Search </md-card-title>
+  <md-card-content>
+    <md-input #newquery type="search" placeholder="Search" [value]="query" (keydown.enter)="submit(newquery.value)"></md-input>
+    <button md-raised-button color="primary" (click)="submit(newquery.value)" > Submit </button>
+  </md-card-content>
+</md-card> 
+<div *ngIf="results">
+  <div *ngIf="!results">
+    No results found with the term {{query}}
+  </div>
+  <div *ngIf="results.length">
+    <h2> Search Results </h2>
+
+    <div class="row"> 
+      <div class="col-sm-6 col-md-4" *ngFor="let t of results">
+         <img src="{{ t.album.images[0].url }}" class="img-responsive">
+         <a [routerLink]="['/artists', t.artists[0].id]"> {{ t.artists[0].name }} </a>
+         <a [routerLink]="['/tracks', t.id]"> {{ t.name }} </a>
+         <a [routerLink]="['/albums', t.album.id]"> {{ t.album.name }} </a> 
+      </div> 
+    </div> 
+
+  </div>
+</div>
+
