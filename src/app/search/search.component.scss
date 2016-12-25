@@ -1,0 +1,51 @@
+@mixin width($value) {
+    width: $value;
+}
+@mixin margin($value) {
+    margin: $value;
+}
+.center {
+    @include width(50vw);
+    @include margin(2px auto);
+}
+.heading {
+    font-size: 36px;
+    font-family: fantasy;
+    @include width(30vw);
+    @include margin(0 auto);
+}
+.wide {
+    @include width(45vw);
+    @include margin(20px auto);
+}
+.flex {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.div {
+    @include width(81.5em);
+    padding-left: 1.5em;
+}
+.card {
+    padding: 5px;
+    height: 365px;
+    flex: 1 1 auto;
+    border: 1px solid lightgrey;
+    @include width(300px);
+    @include margin(5px);
+}
+.img-responsive {
+    @include width(inherit);
+    height: 300px;
+}
+.centralize {
+    display: flex;
+    justify-content: center;
+    @include margin(2px);
+}
+.button {
+    flex: 0 1 auto;
+    @include margin(2px auto);
+}

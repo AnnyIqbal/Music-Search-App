@@ -12,7 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { AlbumComponent } from  './album/album.component';
 import { ArtistComponent } from './artist/artist.component';
 import { TrackComponent } from './track/track.component';
-import { SpotifyService, SPOTIFY_PROVIDERS } from './services/spotify.service';
+import { SPOTIFY_PROVIDERS } from './services/spotify.service';
 
 const routes: Routes = [
   { path: 'search', component: SearchComponent },

@@ -1,6 +1,8 @@
-  <div *ngIf="track">
-    <h1>{{ track.name }}</h1>
-    <p> <img src="{{ track.album.images[1].url }}"> </p>
+  <md-card class="width" *ngIf="track">
+    <md-card-title>{{ track.name }}</md-card-title>
+    <img md-card-img class="size" src="{{ track.album.images[1].url }}">
     <p> <audio controls src="{{ track.preview_url }}"></audio> </p>
-    <p><a href (click)="back()">Back</a></p>
-  </div>
+    <md-card-actions class="action">
+      <button md-raised-button color="primary" (click)="back()">Back</button>
+    </md-card-actions>
+  </md-card>

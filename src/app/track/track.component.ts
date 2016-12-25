@@ -5,7 +5,8 @@ import {SpotifyService} from '../services/spotify.service';
 
 @Component({
   selector: 'app-track',
-  templateUrl: './track.component.html'
+  templateUrl: './track.component.html',
+  styleUrls: ['../artist/artist.component.scss']
 })
 export class TrackComponent implements OnInit {
   id: string;

@@ -1,5 +1,7 @@
-  <div *ngIf="artist">
-    <h1>{{ artist.name }}</h1>
-    <p> <img src="{{ artist.images[0].url }}"> </p>
-    <p><a href (click)="back()">Back</a></p>
-  </div>
+  <md-card class="width" *ngIf="artist">
+    <md-card-title>{{ artist.name }}</md-card-title>
+    <img md-card-img class="size" src="{{ artist.images[0].url }}"> 
+    <md-card-actions class="action">
+      <button md-raised-button color="primary" (click)="back()">Back</button>
+    </md-card-actions>
+  </md-card>

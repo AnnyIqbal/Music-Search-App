@@ -1,26 +1,33 @@
 <md-card> 
-  <md-card-title> Search </md-card-title>
-  <md-card-content>
-    <md-input #newquery type="search" placeholder="Search" [value]="query" (keydown.enter)="submit(newquery.value)"></md-input>
-    <button md-raised-button color="primary" (click)="submit(newquery.value)" > Submit </button>
+  <md-card-title class="heading"> Music Search App </md-card-title>
+  <md-card-content class="center">
+    <md-input class="wide" #newquery type="search" placeholder="Search" [value]="query" (keydown.enter)="submit(newquery.value)"></md-input>
+    <button md-mini-fab color="primary" (click)="submit(newquery.value)" > 
+      <i class="material-icons">search</i>
+    </button>
   </md-card-content>
 </md-card> 
-<div *ngIf="results">
+<div *ngIf="results" class="div">
   <div *ngIf="!results">
     No results found with the term {{query}}
   </div>
   <div *ngIf="results.length">
-    <h2> Search Results </h2>
-
-    <div class="row"> 
-      <div class="col-sm-6 col-md-4" *ngFor="let t of results">
-         <img src="{{ t.album.images[0].url }}" class="img-responsive">
-         <a [routerLink]="['/artist', t.artists[0].id]"> {{ t.artists[0].name }} </a>
-         <a [routerLink]="['/track', t.id]"> {{ t.name }} </a>
-         <a [routerLink]="['/album', t.album.id]"> {{ t.album.name }} </a> 
+      <div class="flex" *ngFor="let t of results">
+      <md-card class="card">
+         <img md-card-img src="{{ t.album.images[0].url }}" class="img-responsive">
+         <md-card-actions class="centralize">
+            <button md-mini-fab class="button" color="primary" mdTooltip="artist" mdTooltipPosition="before" [routerLink]="['/artist', t.artists[0].id]">
+                <i class="material-icons">account_circle</i>
+            </button>
+            <button md-mini-fab class="button" color="warn" [routerLink]="['/track', t.id]"> 
+                <i class="material-icons">play_arrow</i>
+            </button>
+            <button md-mini-fab class="button" color="accent" [routerLink]="['/album', t.album.id]"> 
+                <i class="material-icons">album</i>
+            </button> 
+         </md-card-actions>
+      </md-card>
       </div> 
-    </div> 
-
   </div>
 </div>
 

@@ -1,0 +1,18 @@
+@mixin width($value) {
+    width: $value;
+}
+.size {
+    @include width(300px);
+    height: 300px;
+}
+.width {
+    @include width(300px);
+    font-family: 'Times New Roman', Times, serif;
+}
+.action {
+    @include width(inherit);
+    margin: auto;
+}
+.font {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
