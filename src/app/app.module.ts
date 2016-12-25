@@ -12,7 +12,7 @@ import { SearchComponent } from './search-component/search.component';
 import { AlbumComponent } from  './album/album.component';
 import { ArtistComponent } from './artist/artist.component';
 import { TrackComponent } from './track/track.component';
-import { SpotifyService } from './services/spotify.service';
+import { SpotifyService, SPOTIFY_PROVIDERS } from './services/spotify.service';
 
 const routes: Routes = [
   { path: 'search', component: SearchComponent },
@@ -37,8 +37,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MaterialModule.forRoot()
   ],
-  providers: [ SpotifyService,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  // providers: [ SpotifyService,
+  //   { provide: LocationStrategy, useClass: HashLocationStrategy }
+  // ],
+   providers: [
+    SPOTIFY_PROVIDERS,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

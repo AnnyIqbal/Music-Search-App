@@ -15,9 +15,9 @@
     <div class="row"> 
       <div class="col-sm-6 col-md-4" *ngFor="let t of results">
          <img src="{{ t.album.images[0].url }}" class="img-responsive">
-         <a [routerLink]="['/artists', t.artists[0].id]"> {{ t.artists[0].name }} </a>
-         <a [routerLink]="['/tracks', t.id]"> {{ t.name }} </a>
-         <a [routerLink]="['/albums', t.album.id]"> {{ t.album.name }} </a> 
+         <a [routerLink]="['/artist', t.artists[0].id]"> {{ t.artists[0].name }} </a>
+         <a [routerLink]="['/track', t.id]"> {{ t.name }} </a>
+         <a [routerLink]="['/album', t.album.id]"> {{ t.album.name }} </a> 
       </div> 
     </div> 
 

@@ -1,37 +1,11 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-artist',
-//   templateUrl: './artist.component.html',
-//   styleUrls: ['./artist.component.css']
-// })
-// export class ArtistComponent {}
-
-/*
- * Angular
- */
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-
-/*
- * Services
- */
 import {SpotifyService} from '../services/spotify.service';
 
 @Component({
-  selector: 'artist',
-  template: `
-  <div *ngIf="artist">
-    <h1>{{ artist.name }}</h1>
-
-    <p>
-      <img src="{{ artist.images[0].url }}">
-    </p>
-
-    <p><a href (click)="back()">Back</a></p>
-  </div>
-  `
+  selector: 'app-artist',
+  templateUrl: './artist.component.html'
 })
 export class ArtistComponent implements OnInit {
   id: string;

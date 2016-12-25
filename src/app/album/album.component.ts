@@ -1,58 +1,11 @@
-// import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-album',
-//   template: 
-//   `
-//     <p> App works! In album component </p>
-//   `
-//   // templateUrl: './album.component.html'
-//   // styleUrls: ['./album.component.css']
-// })
-// export class AlbumComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
-
-/*
- * Angular
- */
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-
- /*
-  * Services
-  */
 import {SpotifyService} from '../services/spotify.service';
 
 @Component({
-  selector: 'album',
-  template: `
-  <div *ngIf="album">
-    <h1>{{ album.name }}</h1>
-    <h2>{{ album.artists[0].name }}</h2>
-
-    <p>
-      <img src="{{ album.images[1].url }}">
-    </p>
-
-    <h3>Tracks</h3>
-    <ol>
-      <li *ngFor="let t of album.tracks.items">
-        <a [routerLink]="['/tracks', t.id]">
-          {{ t.name }}
-        </a>
-      </li>
-    </ol>
-
-    <p><a href (click)="back()">Back</a></p>
-  </div>
-  `
+  selector: 'app-album',
+  templateUrl: './album.component.html'
 })
 export class AlbumComponent implements OnInit {
   id: string;
