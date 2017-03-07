@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { MaterialModule } from '@angular/material';
+import { AngularFireModule } from 'angularfire2';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,14 @@ import { AlbumComponent } from  './album/album.component';
 import { ArtistComponent } from './artist/artist.component';
 import { TrackComponent } from './track/track.component';
 import { SPOTIFY_PROVIDERS } from './services/spotify.service';
+
+const config = {
+    apiKey: "AIzaSyCO9kSltise0fT__mVyB-gVQIwpz-NbKhc",
+    authDomain: "music-search-app-8c043.firebaseapp.com",
+    databaseURL: "https://music-search-app-8c043.firebaseio.com",
+    storageBucket: "music-search-app-8c043.appspot.com",
+    messagingSenderId: "874913072829"
+  };
 
 const routes: Routes = [
   { path: 'search', component: SearchComponent },
@@ -35,7 +44,8 @@ const routes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AngularFireModule.initializeApp(config)
   ],
   // providers: [ SpotifyService,
   //   { provide: LocationStrategy, useClass: HashLocationStrategy }
