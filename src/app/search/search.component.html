@@ -1,7 +1,9 @@
 <md-card> 
   <md-card-title class="heading"> Music Search App </md-card-title>
   <md-card-content class="center">
-    <md-input class="wide" #newquery type="search" placeholder="Search" [value]="query" (keydown.enter)="submit(newquery.value)"></md-input>
+    <md-input-container class="wide" type="search" placeholder="Search">
+      <input mdInput #newquery type="search" placeholder="Search" [value]="query" (keydown.enter)="submit(newquery.value)" />
+    </md-input-container>
     <button md-mini-fab color="primary" (click)="submit(newquery.value)" > 
       <i class="material-icons">search</i>
     </button>

@@ -1,6 +1,6 @@
 import { MusicSearchAppPage } from './app.po';
 
-describe('music-search-app App', function() {
+describe('music-search-app App', () => {
   let page: MusicSearchAppPage;
 
   beforeEach(() => {
